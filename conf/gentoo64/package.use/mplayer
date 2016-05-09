@@ -1,0 +1,1 @@
+media-video/mplayer -cdio -dvd -dvdnav -enca -osdmenu -shm -xscreensaver bluray dts x264

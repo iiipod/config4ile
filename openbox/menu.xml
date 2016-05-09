@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+	<menu id="Tools" label="Tools">
+		<item label="kcalc">
+			<action name="Execute">
+				<execute>kcalc</execute>
+			</action>
+		</item>
+		<item label="7-Zip">
+			<action name="Execute">
+				<execute>7zFM</execute>
+			</action>
+		</item>
+		<item label="GoldenDict">
+			<action name="Execute">
+				<execute>goldendict</execute>
+			</action>
+		</item>
+		<item label="星际译王">
+			<action name="Execute">
+				<execute>stardict</execute>
+			</action>
+		</item>
+		<item label="PlayonLinux">
+			<action name="Execute">
+				<execute>playonlinux</execute>
+			</action>
+		</item>
+		<item label="KeePassX">
+			<action name="Execute">
+				<execute>keepassx</execute>
+			</action>
+		</item>
+		<item label="Crossover">
+			<action name="Execute">
+				<execute>crossover</execute>
+			</action>
+		</item>
+		<item label="ISO master">
+			<action name="Execute">
+				<execute>isomaster</execute>
+			</action>
+		</item>
+		<item label="Truecrypt">
+			<action name="Execute">
+				<execute>truecrypt</execute>
+			</action>
+		</item>
+		<item label="VirtualBox">
+			<action name="Execute">
+				<execute>VirtualBox</execute>
+			</action>
+		</item>
+	</menu>
+	<menu id="apps-editors-menu" label="Editors">
+		<item label="GVim">
+			<action name="Execute">
+				<command>gvim</command>
+				<startupnotify>
+					<enabled>yes</enabled>
+					<wmclass>GVim</wmclass>
+				</startupnotify>
+			</action>
+		</item>
+	</menu>
+	<menu id="apps-term-menu" label="Terminals">
+		<item label="Urxvt">
+			<action name="Execute">
+				<execute>urxvt</execute>
+			</action>
+		</item>
+	</menu>
+	<menu id="Games" label="Game">
+		<item label="FCEUX">
+			<action name="Execute">
+				<execute>fceux</execute>
+			</action>
+		</item>
+		<item label="SuperTux">
+			<action name="Execute">
+				<execute>supertux --opengl</execute>
+			</action>
+		</item>
+		<item label="Mupen64Plus">
+			<action name="Execute">
+				<execute>mupen64plus</execute>
+			</action>
+		</item>
+		<item label="Snes9x">
+			<action name="Execute">
+				<execute>snes9x-gtk</execute>
+			</action>
+		</item>
+		<item label="Wolf ET">
+			<action name="Execute">
+				<execute>/usr/games/bin/et</execute>
+			</action>
+		</item>
+		<item label="Urban Terror">
+			<action name="Execute">
+				<execute>urbanterror</execute>
+			</action>
+		</item>
+	</menu>
+	<menu id="apps-net-menu" label="Internet">
+		<item label="TM 2013">
+			<action name="Execute">
+				<execute>wine &quot;.wine/drive_c/Program Files/Tencent/TM/Bin/TM.exe&quot;</execute>
+			</action>
+		</item>
+		<item label="Firefox">
+			<action name="Execute">
+				<execute>firefox-bin</execute>
+			</action>
+		</item>
+		<item label="Filezilla">
+			<action name="Execute">
+				<execute>filezilla</execute>
+			</action>
+		</item>
+		<item label="Opera">
+			<action name="Execute">
+				<command>opera</command>
+				<startupnotify>
+					<enabled>yes</enabled>
+					<wmclass>Opera</wmclass>
+				</startupnotify>
+			</action>
+		</item>
+		<item label="Skype">
+			<action name="Execute">
+				<execute>skype</execute>
+			</action>
+		</item>
+		<item label="Thunderbird">
+			<action name="Execute">
+				<execute>thunderbird-bin</execute>
+			</action>
+		</item>
+		<item label="Google Earth">
+			<action name="Execute">
+				<execute>googleearth</execute>
+			</action>
+		</item>
+		<item label="Wireshark">
+			<action name="Execute">
+				<execute>wireshark</execute>
+			</action>
+		</item>
+		<item label="VNC viewer">
+			<action name="Execute">
+				<execute>vncviewer</execute>
+			</action>
+		</item>
+		<item label="Hexchat">
+			<action name="Execute">
+				<execute>hexchat</execute>
+			</action>
+		</item>
+	</menu>
+	<menu id="apps-office-menu" label="Office">
+		<menu id="apps-office-menu-181012" label="WPS">
+			<item label="WPS文字">
+				<action name="Execute">
+					<execute>/usr/bin/wps</execute>
+				</action>
+			</item>
+			<item label="WPS表格">
+				<action name="Execute">
+					<execute>/usr/bin/et</execute>
+				</action>
+			</item>
+			<item label="WPS演示">
+				<action name="Execute">
+					<execute>/usr/bin/wpp</execute>
+				</action>
+			</item>
+		</menu>
+	</menu>
+	<menu id="apps-multimedia-menu" label="Multimedia">
+		<item label="Audacious">
+			<action name="Execute">
+				<execute>audacious</execute>
+			</action>
+		</item>
+		<item label="Kdenlive">
+			<action name="Execute">
+				<execute>kdenlive</execute>
+			</action>
+		</item>
+		<item label="Radio Tray">
+			<action name="Execute">
+				<execute>radiotray</execute>
+			</action>
+		</item>
+		<item label="RecordMyDesktop">
+			<action name="Execute">
+				<execute>gtk-recordMyDesktop</execute>
+			</action>
+		</item>
+	</menu>
+	<menu id="apps-fileman-menu" label="File Managers">
+		<item label="PCMan File Manager">
+			<action name="Execute">
+				<command>pcmanfm</command>
+				<startupnotify>
+					<enabled>yes</enabled>
+				</startupnotify>
+			</action>
+		</item>
+	</menu>
+	<menu id="apps-graphics-menu" label="Graphics">
+		<item label="Kuickshow">
+			<action name="Execute">
+				<execute>kuickshow</execute>
+			</action>
+		</item>
+		<item label="ksnapshot">
+			<action name="Execute">
+				<execute>ksnapshot</execute>
+			</action>
+		</item>
+		<item label="Gimp">
+			<action name="Execute">
+				<command>gimp</command>
+				<startupnotify>
+					<enabled>yes</enabled>
+				</startupnotify>
+			</action>
+		</item>
+		<item label="Okular">
+			<action name="Execute">
+				<execute>okular</execute>
+			</action>
+		</item>
+	</menu>
+	<menu id="system-menu" label="System">
+		<item label="配置右键菜单">
+			<action name="Execute">
+				<execute>obmenu</execute>
+			</action>
+		</item>
+		<item label="Openbox Configuration Manager">
+			<action name="Execute">
+				<command>obconf</command>
+				<startupnotify>
+					<enabled>yes</enabled>
+				</startupnotify>
+			</action>
+		</item>
+		<item label="Manage Cups Printers">
+			<action name="Execute">
+				<command>xdg-open http://localhost:631/</command>
+				<startupnotify>
+					<enabled>no</enabled>
+					<icon>cups</icon>
+				</startupnotify>
+			</action>
+		</item>
+		<separator/>
+		<item label="Reconfigure Openbox">
+			<action name="Reconfigure"/>
+		</item>
+	</menu>
+	<menu id="root-menu" label="Openbox 3">
+		<separator label="Applications"/>
+		<menu id="apps-accessories-menu"/>
+		<menu id="Tools"/>
+		<menu id="apps-office-menu"/>
+		<menu id="Games"/>
+		<menu id="apps-editors-menu"/>
+		<menu id="apps-net-menu"/>
+		<menu id="apps-graphics-menu"/>
+		<menu id="apps-multimedia-menu"/>
+		<menu id="apps-term-menu"/>
+		<menu id="apps-fileman-menu"/>
+		<separator label="System"/>
+		<menu id="system-menu"/>
+		<separator/>
+		<item label="锁定">
+			<action name="Execute">
+				<execute>xlock</execute>
+			</action>
+		</item>
+		<menu id="root-menu-94392" label="管理">
+			<item label="关机">
+				<action name="Execute">
+					<execute>sudo /sbin/shutdown -h now</execute>
+				</action>
+			</item>
+			<item label="重启">
+				<action name="Execute">
+					<execute>sudo /sbin/shutdown -r now</execute>
+				</action>
+			</item>
+		</menu>
+		<item label="注销">
+			<action name="Exit"/>
+		</item>
+	</menu>
+</openbox_menu>

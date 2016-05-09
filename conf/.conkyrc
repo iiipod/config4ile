@@ -1,0 +1,112 @@
+# Hack your own Conky, don't leech, LEARN!!
+# http://conky.sourceforge.net/
+# http://conky.sourceforge.net/config_settings.html
+# http://conky.sourceforge.net/variables.html
+# http://conky.sourceforge.net/docs.html
+# RTFM....................
+#
+# SquadronGuns at GMail dot com
+#
+# Reading all the documentation, looking @ other .conkyrc's
+# and general knowledge of Linux will help you tweak this
+# or create your own.
+#
+use_xft yes
+xftfont DejaVu Sans:size=9
+xftalpha 0.8
+text_buffer_size 2048
+
+update_interval 1
+
+total_run_times 0
+
+own_window_argb_visual yes
+own_window yes
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar
+
+double_buffer yes
+
+minimum_size 200 0
+
+draw_shades yes
+
+draw_outline no
+
+draw_borders no
+
+stippled_borders 0
+
+border_width 1
+
+default_color green
+default_shade_color black
+default_outline_color black
+own_window_colour white
+
+
+#alignment top_left 
+alignment top_right 
+#alignment bottom_left 
+#alignment bottom_right 
+#alignment none
+
+gap_x 10
+gap_y 35
+
+no_buffers yes
+
+uppercase no
+
+cpu_avg_samples 2
+
+net_avg_samples 2
+
+override_utf8_locale yes
+
+use_spacer none
+
+TEXT
+${alignc 25}${font DejaVu Sans:size=12}System Information${font}
+
+SYSTEM  ${hr 2}
+
+Kernel: ${alignr}${kernel}
+Uptime: ${alignr}${uptime}
+
+Core 1:    ${cpu cpu1}% ${alignr}${freq_g cpu1} GHz  /  ${hwmon 0 temp 1} C
+Core 2:    ${cpu cpu2}% ${alignr}${freq_g cpu2} GHz  /  ${hwmon 1 temp 1} C
+
+Load Averages: ${alignr}$loadavg
+
+Top 5 Processes                 PID   CPU%  MEM%
+${top name 1} ${alignr}${top pid 1}    ${top cpu 1}    ${top mem 1}
+${top name 2} ${alignr}${top pid 2}    ${top cpu 2}    ${top mem 2}
+${top name 3} ${alignr}${top pid 3}    ${top cpu 3}    ${top mem 3}
+${top name 4} ${alignr}${top pid 4}    ${top cpu 4}    ${top mem 4}
+${top name 5} ${alignr}${top pid 5}    ${top cpu 5}    ${top mem 5}
+
+RAM:  ${alignr}$mem  /  ${alignr}$memmax
+${membar 5，1}
+SWAP: ${alignr}$swap  /  ${alignr}$swapmax
+${swapbar 5，1}
+#MOUNT / HDD's  ${hr 2}
+#Root:      ${alignr}${fs_used /}  /  ${alignr}${fs_size /}
+#Available:   ${fs_free_perc /}%
+#Home:      ${alignr}${fs_used /home}  /  ${alignr}${fs_size /home}
+#Available:   ${fs_free_perc /home}%
+
+NETWORK  ${hr 2}
+
+Up:     ${alignr}${upspeed eth0}KB/s
+Total:  ${alignr}${totalup eth0}
+
+Down:   ${alignr}${downspeed eth0}KB/s
+Total:  ${alignr}${totaldown eth0}
+${hr 2}
+
+/var/log/message
+
+${exec tail -f -n5 /var/log/messages}
+
+${font DejaVu Sans:size=12}${time %H:%M:%S}${alignr}${time %A, %D}${font}

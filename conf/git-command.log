@@ -1,0 +1,52 @@
+###Blog##########################################
+git init
+git checkout --orphan gh-pages
+git add .
+git commit -m "init"
+git remote add origin https://github.com/iiipod/web.git
+git push origin gh-pages
+########################使用Jekyll-Bootstrap搭建
+1. 在Github上新建一个仓库, 注意仓库名称的格式: USERNAME.github.com, 例如: iiipod.github.com
+
+2. 模板clone到本地: git clone https://github.com/iiipod/iiipod.github.com.git iiipod.github.com
+
+3. 进入目录: cd iiipod.github.com
+
+4. git add -A .
+
+5. git commit -m "`date`"
+
+6. 修改远程仓库地址到自己的仓库, 从而可以push到自己的仓库: git remote set-url origin git@github.com:iiipod/iiipod.github.com.git
+
+7. 推送到Github上自己的仓库: git push origin master  (注意这里是master分支, 不是之前Github Pages的gh-pages分支)
+
+8. 访问http://iiipod.github.com, 你的博客已经搭好了.
+
+9. 更新内容::: -> Update
+
+    git add -A .
+    git commit -m "ok"
+    git push origin master
+### config-file ###
+git add -A .
+git commit -m "`date`"
+git remote set-url origin git@github.com:iiipod/config-file.git
+git push origin master
+
+### iiipod.github.com ###
+git add -A .
+git commit -m "`date`"
+git remote set-url origin git@github.com:iiipod/iiipod.github.com.git
+git push origin master
+
+### py-learn ###
+git add -A .
+git commit -m "`date`"
+git remote set-url origin git@github.com:iiipod/py-learn.git
+git push origin master
+
+### c-learn ###
+git add -A .
+git commit -m "`date`"
+git remote set-url origin git@github.com:iiipod/c-learn.git
+git push origin master

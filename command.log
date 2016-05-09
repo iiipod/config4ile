@@ -1,0 +1,19 @@
+exec sensors|grep 'Core 0'|cut -c 16-22
+python2.7 appcfg.py --oauth2 -A id update /home/user/id/
+john --restore|aircrack-ng -b 00:00:00:00:00:01 -w - 000001.cap
+reaver -i mon0 -b <AP's MAC> -v -NSE -s <AP's MAC>.wpc
+route add -net 192.168.1.0/24 dev eth0
+route add -net 192.168.0.0/24 dev wlan0
+tcpdump port 80 and host 192.168.1.1 -w 001.cap
+hydra -l [username] -P [/path/to/wordlist] -e ns -t 15 -f -s -vV [hostname/ip] http-get [folder]
+ 
+eix opengl|grep '\[I\]' >>/eselect.log 
+eix |grep '\[I\]' >>/eselect.log 
+git clone git://github.com/rapid7/metasploit-framework
+
+steghide
+wget -r -p -np -k -c http://
+md5bf -m xx-hash-xx -d xx-dict-xx.dic
+john --format=raw-MD5 user.md5
+vim >>> nmap <F9> :w<CR>:!python %<CR>
+vim >>> au BufRead *.py map <buffer> <F9> :w<CR>:!/usr/bin/env python2 % <CR>

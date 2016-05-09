@@ -1,0 +1,98 @@
+dev-lang/php curl gd pcntl zip
+dev-libs/libxml2 python icu
+kde-base/kwin opengl gles debug
+kde-base/kdelibs opengl mmx sse sse2 -udev -policykit -semantic-desktop -udisks -upower 
+media-libs/imlib2 X
+media-libs/libsdl X opengl -xv
+media-libs/mesa gles2 gbm xa xorg
+media-libs/mlt xml kde sdl ffmpeg melt kdenlive
+media-plugins/alsa-plugins pulseaudio
+media-plugins/audacious-plugins aac cue ffmpeg flac lame mp3 mtp wavepack 
+media-plugins/gst-plugins-meta ogg vorbis
+media-video/ffmpeg sdl X opus -network
+virtual/ffmpeg sdl X 
+www-plugins/adobe-flash AdobeFlash-10.3
+x11-libs/cairo X xcb
+x11-libs/qt-core ssl qt3support
+x11-libs/qt-gui qt3support dbus egl
+x11-libs/qt-opengl qt3support egl 
+sys-auth/consolekit policykit pam
+sys-auth/pambase consolekit
+sys-libs/zlib minizip
+sys-apps/dbus X
+dev-python/PyQt4 svg -dbus declarative sql webkit X
+net-wireless/madwifi-ng injection
+media-libs/sdl-mixer vorbis mod mikmod
+app-crypt/truecrypt X
+x11-libs/wxGTK X tiff
+x11-libs/pango X
+x11-libs/gtk+ X
+app-admin/conky X lua-cairo lua-imlib wifi iostats audacious imlib hddtemp curl lua weather-xoap weather-metar
+media-libs/libpng apng
+virtual/udev gudev hwdb
+sys-fs/udev gudev hwdb
+app-emulation/virtualbox extensions -alsa -pam -sdk
+x11-libs/libdrm libkms
+dev-lang/python sqlite ssl 
+app-admin/testdisk ntfs 
+net-wireless/wpa_supplicant dbus -qt4
+mail-client/thunderbird -alsa
+net-libs/libpcap ipv6 -bluetooth
+net-analyzer/nmap ipv6 -gtk
+media-sound/lash gtk
+media-libs/lv2 plugins
+www-client/chromium -cups
+net-dns/bind dlz ipv6
+net-dns/bind-tools ipv6
+sys-apps/iproute2 ipv6
+net-firewall/iptables ipv6
+net-misc/iputils ipv6
+media-gfx/blender jpeg2k  -jack
+net-misc/openvpn minimal
+games-fps/urbanterror server openal smp
+dev-java/swt cairo
+dev-qt/qtgui dbus -xv
+media-gfx/exiv2 xmp
+dev-cpp/glog gflags
+dev-libs/redland ssl
+app-arch/p7zip -kde rar wxwidgets
+
+app-text/stardict pronounce espeak
+net-analyzer/ettercap gtk
+#=========E17=====================================
+media-libs/evas X
+x11-wm/enlightenment emotion pam spell ukit
+dev-libs/ecore curl
+#================crossover========================
+app-emulation/crossover-bin  -ldap -mp3 -scanner -gphoto2
+dev-ruby/rdoc ruby_targets_ruby20
+dev-ruby/racc ruby_targets_ruby20
+dev-ruby/json ruby_targets_ruby20
+dev-ruby/rake ruby_targets_ruby20
+dev-ruby/rubygems ruby_targets_ruby20
+app-text/ghostscript-gpl cups
+net-nds/openldap -berkdb -crypt -icu -ssl -syslog -tcpd
+app-editors/gvim gtk
+games-emulation/snes9x gtk
+mail-client/thunderbird-bin -crashreporter
+dev-ruby/activerecord postgres
+app-misc/mc -slang
+media-sound/alsa-utils -libsamplerate
+x11-wm/openbox branding imlib python startup-notification svg
+x11-libs/libfm udev
+media-sound/moc aac flac wavpack ffmpeg
+media-plugins/osdlyrics -mpd -xmms2
+app-office/wps-office X
+dev-libs/boost static-libs
+kde-base/okular chm ebook
+net-analyzer/wireshark -qt4 
+dev-libs/leveldb -snappy
+net-p2p/transmission -qt4
+gnome-extra/zenity -webkit
+dev-libs/efl X
+x11-terms/rxvt-unicode 256-color alt-font-width xft -vanilla
+dev-libs/nss utils
+#================wine=============================
+#app-emulation/wine samba ssl capi lcms fontconfig cups xcomposite -udisks
+app-emulation/wine fontconfig gecko gstreamer jpeg mp3 png truetype alsa -oss X nls opengl xcomposite udisks -custom-cflags -test threads win32
+

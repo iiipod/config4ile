@@ -1,0 +1,1 @@
+app-emulation/wine threads -gecko -mono -udisks mp3 ssl  

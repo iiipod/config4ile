@@ -1,0 +1,94 @@
+##############################################
+#  Settings
+##############################################
+background no
+use_xft yes
+xftfont DejaVu Sans:size=10
+xftalpha 0.8
+update_interval 1
+total_run_times 0
+own_window_argb_visual yes
+own_window yes
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar
+double_buffer yes
+minimum_size 1000 700
+maximum_width 300
+draw_shades no
+draw_outline no
+draw_borders no
+stippled_borders 10
+border_inner_margin 0
+border_width 1
+draw_graph_borders no
+default_color red
+color6 green
+default_shade_color lime
+default_outline_color blue
+#alignment tl
+alignment top_right
+gap_x 5
+gap_y 5
+no_buffers yes
+uppercase no
+text_buffer_size 1024
+imlib_cache_size 0
+cpu_avg_samples 2
+show_graph_scale no
+show_graph_range no
+short_units yes
+override_utf8_locale yes
+use_spacer none
+if_up_strictness address
+##############################################
+#  Output
+##############################################
+TEXT
+
+|============================
+|__${color6}${nodename}${color}
+|  |__${color6}${kernel}${color}
+|  |__${color6}${time %I:%M:%S}${color}
+#|  |__${color6}${time %A}${color}__${color6}${time %d}${color}__${color6}${time %B}${color}
+|  |__${color}uptime ${color6}${uptime_short}${color}
+|
+|__${color6}cpu${color}${cpugraph cpu0 8,110 151515 555555}
+|  |__${color6}${cpu cpu1}${color}%__${color6}${freq_g}${color}GHz__${color6}?${color}°C   
+|  |         ${cpubar cpu1 5,220 }
+|  |__${color6}${cpu cpu2}${color}%__${color6}${freq_g}${color}GHz__${color6}?${color}°C   
+|  |__     ${cpubar cpu2 5,220 }
+|      |     name                pid     cpu     mem
+|      |__${color6}${top name 1}${top pid 1}${top cpu 1}%${top mem 1}%${color}
+|      |__${color6}${top name 2}${top pid 2}${top cpu 2}%${top mem 2}%${color}
+|      |__${color6}${top name 3}${top pid 3}${top cpu 3}%${top mem 3}%${color}
+|
+|__${color6}ram${color} ${memgraph 8,90 151515 555555} 
+|  |__${color6}${memperc}${color}%__${color6}${mem}${color}/${color6}${memmax}${color}    ${membar 5，1}
+|      |     name                pid     cpu     mem    
+|      |__${color6}${top_mem name 1}${top_mem pid 1}${top_mem cpu 1}%${top_mem mem 1}%${color} 
+|      |__${color6}${top_mem name 2}${top_mem pid 2}${top_mem cpu 2}%${top_mem mem 2}%${color}
+|      |__${color6}${top_mem name 3}${top_mem pid 3}${top_mem cpu 3}%${top_mem mem 3}%${color}
+|
+|__${color6}swap${color}
+|  |__${color6}${swapperc}${color}%${color}__${color6}$swap${color}/${color6}$swapmax${color}           ${swapbar 5，1}${color}
+|
+|__${color6}hdd${color}
+|  |__${color6}${fs_used_perc /}${color}%__${color6}${fs_used /}${color}/${color6}${fs_size /}${color}   ${fs_bar 5,120 /}
+|  |   |__Temp${color}__${color6}?${color}°C
+|  |__${color}I/O${color} ${diskiograph 8,50 151515 555555}
+|      |__read ${color6}${diskio_read}${color}/s
+|      |__write ${color6}${diskio_write}${color}/s
+|
+|__${color6}network${color}${if_up eth0}
+|  |__${color6}eth0${color}__${color6}${addrs eth0}${color}/${color6}${texeci 600 ~/bin/ip.sh}${color}
+|  |   |__tcp_ports ${color6}${tcp_portmon 1 65535 count}${color}
+|  |   |__down${color6} ${downspeed eth0}${color}/s${goto 150}${downspeedgraph eth0 8,110 151515 555555}
+|  |   |__up${color6}      ${upspeed eth0}${color}/s${goto 150}${upspeedgraph eth0 8,110 151515 555555}${endif}
+|  |__${if_up wlan0}${color6}wlan0${color}__${color6}${addrs wlan0}${color}/${color6}${texeci 600 ~/bin/ip.sh}${color}
+|      |__tcp__ports ${color6}${tcp_portmon 1 65535 count}${color}
+|      |   |__essid ${color6}${wireless_essid wlan0}${color}__qual${color6}${wireless_link_qual_perc wlan0}${color}%
+|      |   |__ap'MAC ${color6}${wireless_ap wlan0}${color}
+|      |__down ${color6}${downspeed wlan0}${color}/s${goto 150}${downspeedgraph wlan0 8,110 151515 555555}
+|      |__up      ${color6}${upspeed wlan0}${color}/s${goto 150}${upspeedgraph wlan0 8,110 151515 555555}${endif}
+|
+==========================
