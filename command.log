@@ -17,3 +17,4 @@ md5bf -m xx-hash-xx -d xx-dict-xx.dic
 john --format=raw-MD5 user.md5
 vim >>> nmap <F9> :w<CR>:!python %<CR>
 vim >>> au BufRead *.py map <buffer> <F9> :w<CR>:!/usr/bin/env python2 % <CR>
+vim >>> au BufRead *.c map <buffer> <F10> :w<CR>:!gcc % &&./a.out <CR>
