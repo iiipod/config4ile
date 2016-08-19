@@ -27,10 +27,10 @@ git push origin gh-pages
     git add -A .
     git commit -m "ok"
     git push origin master
-### config-file ###
+### config4ile ###
 git add -A .
 git commit -m "`date`"
-git remote set-url origin git@github.com:iiipod/config-file.git
+git remote set-url origin git@github.com:iiipod/config4ile.git
 git push origin master
 
 ### iiipod.github.com ###
