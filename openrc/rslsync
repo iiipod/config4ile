@@ -7,7 +7,7 @@ extra_started_commands="reload"
 pidfile="/var/run/resilio/resilio.pid"
 command="/bin/rslsync"
 config_file="/etc/rslsync.conf"
-runas_user=${runas_user:-pl:pl}
+runas_user=${runas_user:-nobody:nobody}
 retry="TERM/3/TERM/5"
 
 depend() {
