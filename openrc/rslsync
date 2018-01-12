@@ -1,0 +1,28 @@
+#!/sbin/openrc-run
+# Copyright 1999-2017 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License, v2 or later
+
+extra_started_commands="reload"
+
+pidfile="/var/run/resilio/resilio.pid"
+command="/bin/rslsync"
+config_file="/etc/rslsync.conf"
+runas_user=${runas_user:-pl:pl}
+retry="TERM/3/TERM/5"
+
+depend() {
+	need localmount net
+}
+
+start_pre() {
+	command_args="--config ${config_file}"
+	command_user="${runas_user}"
+
+
+}
+
+reload() {
+	ebegin "Reloading ${SVCNAME}"
+	start-stop-daemon --signal HUP --pidfile "${pidfile}"
+	eend $?
+}
