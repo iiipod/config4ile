@@ -25,6 +25,7 @@ URxvt.color14 : #3434E2E2E2E2
 URxvt.color7  : #D3D3D7D7CFCF
 URxvt.color15 : #EEEEEEEEECEC
     
+URxvt.termName: xterm-256color
 URxvt*foreground:White
 URxvt*background:[65]#000000
 URxvt.depth: 32
