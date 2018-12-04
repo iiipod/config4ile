@@ -1,0 +1,36 @@
+#!/sbin/openrc-run
+# Copyright 1999-2017 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License, v2 or later
+
+aria_config="/etc/aria2/aria2.conf"
+aria_command="/usr/bin/aria2c"
+pid="/var/run/aria2.pid"
+
+depend() {
+    need net
+}
+
+checkconfig() {
+    if [ ! -f ${aria_config} ]; then
+        ewarn "${aria_config} does not exist."
+    fi
+
+    return 0
+}
+
+start() {
+    checkconfig || return 1
+
+    ebegin "Starting Aria2"
+    su - pl -c "${aria_command} --conf-path=${aria_config} --daemon"
+    eend $?
+}
+
+stop() {
+    ebegin "Stopping Aria2"
+    killall -q /usr/bin/aria2c || retval=1
+    #pkill --pidfile /var/run/resilio/resilio.pid
+    eend $?
+}
+
+

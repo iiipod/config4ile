@@ -21,13 +21,13 @@ start() {
     checkconfig || return 1
 
     ebegin "Starting Resilio Sync"
-    su - admin -c "${rsl_command} --config ${rsl_config}"
+    su - pl -c "${rsl_command} --config ${rsl_config}"
     eend $?
 }
 
 stop() {
     ebegin "Stopping Resilio Sync"
-    killall -q /bin/rslsync
+    killall -q /bin/rslsync || retval=1
     #pkill --pidfile /var/run/resilio/resilio.pid
     eend $?
 }
