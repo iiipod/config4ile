@@ -1,5 +1,5 @@
 iptables -t nat -I PREROUTING -p tcp -m tcp -d 192.168.3.4 --dport 3389 -j DNAT --to-destination 10.9.x.x:3389
 iptables -t nat -I POSTROUTING -p tcp -m tcp --dport 3389 -j MASQUERADE
 
-
-
+iptables -t nat -A PREROUTING -d 192.168.2.1 -p tcp -m tcp --dport 8080 -j DNAT --to-destination 192.168.3.x:80
+iptables -t nat -A POSTROUTING -d 192.168.3.x -p tcp --dport 80 -j MASQUERADE
