@@ -3,3 +3,9 @@ iptables -t nat -I POSTROUTING -p tcp -m tcp --dport 3389 -j MASQUERADE
 
 iptables -t nat -A PREROUTING -d 192.168.2.1 -p tcp -m tcp --dport 8080 -j DNAT --to-destination 192.168.3.x:80
 iptables -t nat -A POSTROUTING -d 192.168.3.x -p tcp --dport 80 -j MASQUERADE
+
+# wireguard on openwrt
+iptables -A FORWARD -i wg0 -j ACCEPT
+iptables -A INPUT -s 192.168.4.0/24 -p tcp -m tcp --dport 53 -m conntrack --ctstate NEW -j ACCEPT
+iptables -A INPUT -s 192.168.4.0/24 -p udp -m udp --dport 53 -m conntrack --ctstate NEW -j ACCEPT
+iptables -t nat -A POSTROUTING -s 192.168.4.0/24 -o eth0 -j MASQUERADE
