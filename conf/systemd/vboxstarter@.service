@@ -1,0 +1,15 @@
+[Unit]
+Description=VBox Virtual Machine %i Service
+
+[Service]
+#User=do
+#Group=vboxusers
+#Restart=on-failure
+
+#TimeoutSec=5min
+Environment="VBOX_USER_HOME=/home/do/VirtualBox VMs/%i"
+ExecStart= /usr/bin/VBoxHeadless -s %i
+ExecStop=/usr/bin/vboxmanage controlvm %i poweroff
+
+[Install]
+WantedBy=multi-user.target
