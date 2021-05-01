@@ -1,0 +1,16 @@
+[Unit]
+Description=Run service as user xxx
+DefaultDependencies=no
+After=network.target
+
+[Service]
+Type=simple
+User=xxx
+Group=vboxusers
+ExecStart=/bin/vboxstart.sh
+ExecStop=/bin/vboxstop.sh
+TimeoutStartSec=60
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target
