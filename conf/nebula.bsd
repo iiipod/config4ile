@@ -1,0 +1,68 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: nebula
+# REQUIRE: netif
+# BEFORE: NETWORKING
+# KEYWORD: shutdown
+
+# Add the following lines to
+# /etc/rc.conf.d/nebula /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# nebula_enable (bool):			Set to NO by default.
+#		Set it to YES to enable nebula.
+# nebula_config (path):			Set to /usr/local/etc/nebula.conf
+#		by default.
+# nebula_pidfile (path):		Set to /var/run/nebula.pid
+#		by default.
+# nebula_interfaces (NIC list):		Not defined by default.
+#		Set it to the network interface(s) where nebula should work on.
+# nebula_flags (additional arguments):	Not defined by default.
+#
+
+. /etc/rc.subr
+
+name="nebula"
+rcvar=nebula_enable
+
+command="/usr/local/bin/${name}"
+logfile="/var/log/${name}.log"
+
+load_rc_config $name
+
+: ${nebula_enable="NO"}
+: ${nebula_config="/etc/nebula/config.yml"}
+: ${nebula_pidfile="/var/run/${name}.pid"}
+
+required_files="${nebula_config}"
+pidfile="${nebula_pidfile}"
+script="/usr/local/bin/nebula -config ${nebula_config}"
+
+start_cmd="nebula_start"
+stop_cmd="nebula_stop"
+
+
+nebula_start() {
+  if [ -f "${pifdile}" ] && kill -0 $(cat ${pifdile}); then
+    echo 'Service already running' >&2
+    return 1
+  fi
+  echo 'Starting nebula service…' >&2
+  ${script} > "${logfile}" & echo $! > "${pidfile}"
+  echo 'Service started' >&2
+}
+
+nebula_stop() {
+  if [ ! -f "${pidfile}" ] || ! kill -0 $(cat "${pidfile}"); then
+    echo 'Service not running' >&2
+    return 1
+  fi
+  echo 'Stopping nebula service…' >&2
+  kill -15 $(cat "${pidfile}") && rm -f "${pidfile}"
+  echo 'Service stopped' >&2
+}
+
+run_rc_command "$1"
