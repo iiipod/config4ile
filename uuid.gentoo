@@ -7,7 +7,7 @@ description=""
 command=/usr/bin/uuid
 command_args="${uuid_args}"
 
-uuid_pid="/run/uuid/request"
+uuid_pid="/run/request"
 uuid_command="/usr/sbin/uuidd"
 
 depend() {
